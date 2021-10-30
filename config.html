@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <title>Music-a</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="./perfil.html">Mi perfil</a></li>
+            <li><a href="#" class="no-activo">Musica sin conexión (Solo Premium)</a></li>
+            <li><a href="./config.html">Configuracion</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div id="Contenedor-menu">
+            <div id="Hamburguesa">
+                <button type="checkbox">
+                    <span id="span1" class="linea-superior"></span>
+                    <span class="linea-media"></span>
+                    <span id="span2" class="linea-inferior"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="titulo">
+            <h1>MUSIC-A</h1>
+        </div>
+    </header>
+    <main>
+        <h1 id="title-config">Configuracion general</h1>
+        <section id="config-general">
+            <div class="contenedor-configuracion">
+                <h4>Calidad de reproducción</h4>
+            <select name="calidad" size="1">
+                <option>La mas optima</option>
+                <option>Estandar (Recomendado)</option>
+                <option>La mejor</option>
+            </select>
+            </div>
+
+            <div class="contenedor-configuracion">
+                <h4>Nivel de Volumen</h4>
+            <select name="volumen" size="1">
+                <option>Bajo</option>
+                <option>Estandar (Recomendada)</option>
+                <option>Alto</option>
+            </select>
+            </div>
+            
+
+            <div class="contenedor-configuracion">
+                <h4>Orden de reproducción en playlists</h4>
+            <select name="volumen" size="1">
+                <option>Por nombre</option>
+                <option>Aleatorio siempre</option>
+                <option>Las + reproducidas por mi</option>
+            </select>
+            </div>
+            
+            <div class="contenedor-configuracion config-final">
+                <h4><label><input type="checkbox" id="recomendacion" value="active">Recomendación musical personalizada</label></h4>
+            <h4><label><input type="checkbox" id="autoplay" value="active">Autoplay</label></h4>
+            <h4><label><input type="checkbox" id="ahorro-datos" value="active">Ahorro de datos moviles</label></h4>
+            </div>
+            
+            <p>
+                <input class="boton-config" type="submit" value="Guardar">
+            </p>
+        </section>
+    </main>
+    <section id="Menu">
+        <li><a href="./random.html"><img src="./imgs/random.svg"></a></li>
+        <li><a href="./index.html"><img src="./imgs/home.svg"></a></li>
+        <li><a href="./search.html"><img src="./imgs/search.svg"></a></li>
+    </section>
+    <script src="./hamburguesa.js"></script>
+</body>
+</html>

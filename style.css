@@ -1,0 +1,532 @@
+body{
+    margin: 0;
+    padding: 0;
+    color:#fff;
+    background-color: #000;
+    font-family: century-gothic, sans-serif;
+}
+header{
+    display: flex;
+    align-items: center;
+}
+.titulo{
+    flex-grow: 4;
+    margin-left: 40px;
+}
+.navbar{
+    display: none;
+}
+/*ABRIR EL MENU*/
+.abrirMenu{
+    display:block;
+    position: absolute;
+    padding: 15px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.950);
+    height: 100%;
+    width: 50%;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: abrir-menu;
+}
+.cerrarMenu{
+    animation-duration: 1.5s;
+    animation-name: cerrar-menu;
+}
+
+@keyframes abrir-menu {
+    0%{
+        background-color: #000;
+        left: -100px;
+    }
+    35%, 100%{
+        left: 0px;
+    }
+}
+@keyframes cerrar-menu {
+    0%{
+        left: 0px;
+    }
+    35%, 100%{
+        background-color: #000;
+        left: -350px;
+    }    
+    }
+
+
+
+.navbar a{
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.navbar li:hover{
+    background-color: #b3b3b3;
+    border-radius: 2px;
+}
+.navbar ul{
+    margin-top: 100px;
+    list-style: none;
+}
+.navbar li{
+    padding: 7px 10px;
+}
+.no-activo{
+    pointer-events: none; 
+    cursor: default; 
+    opacity: 0.3;
+}
+/*MENU HAMBURGUESA*/
+#Contenedor-menu{
+    width: 50px;
+    margin: 25px;
+    z-index: 2;
+}
+#Hamburguesa button{
+    background: none;
+    border:0;
+    cursor: pointer;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+#Hamburguesa button span.color{
+    background: #2222223d;
+}
+#Hamburguesa button span{
+    border-radius: 5px;
+    background:#fff;
+    display: block;
+    width: 60%;
+    margin: 5px auto;
+    height: 2px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#Hamburguesa button.open .linea-superior{
+    animation-name:animacion-linea-superior;
+}
+#Hamburguesa button.open .linea-media{
+    animation-name:animacion-linea-media;
+}
+#Hamburguesa button.open .linea-inferior{
+    animation-name:animacion-linea-inferior;
+}
+#Hamburguesa button .linea-superior{
+    animation-name:animacion-linea-superior-cerrar;
+}
+#Hamburguesa button .linea-media{
+    animation-name:animacion-linea-media-cerrar;
+}
+#Hamburguesa button .linea-inferior{
+    animation-name:animacion-linea-inferior-cerrar;
+}
+
+@keyframes animacion-linea-superior {
+    50%, 100%{
+        margin: 0 auto;
+        transform:translateY(2px) rotate(-45deg);
+    }
+}
+@keyframes animacion-linea-media {
+    40%, 100%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+@keyframes animacion-linea-inferior {
+    50%, 100%{
+        margin: 0 auto;
+        transform:translateY(-2px) rotate(45deg);
+    }
+}
+
+@keyframes animacion-linea-superior-cerrar {
+    0%{
+        margin: 0 auto;
+        transform:translateY(2px) rotate(-45deg);
+    }
+    50%, 100%{
+        margin: 5px auto;
+        transform:translateY(0px) rotate(0deg);
+    }
+}
+@keyframes animacion-linea-media-cerrar {
+    0%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+    50%, 100%{
+        margin: 0 auto;
+        width: 60%;
+        opacity: 1;
+    }
+}
+@keyframes animacion-linea-inferior-cerrar {
+    0%{
+        margin: 0 auto;
+        transform:translateY(-2px) rotate(45deg);
+    }
+    50%, 100%{
+        margin: 5px auto;
+        transform:translateY(0px) rotate(0deg);
+    }
+}
+
+#Descubrimiento, #Playlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.encabezado{
+    width: 100%;
+    text-align: start;
+    margin: 0px 25px;
+}
+.caratula{
+    width: 370px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#Menu{
+    background-color: #b3b3b33d;
+    z-index: 10;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 17px 0;
+}
+#Menu li{
+    list-style: none;
+}
+#Menu img{
+    fill: #fff;
+    width: 35px;
+}
+
+/*SECCION BUSCAR*/
+#Buscar{
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#Buscar input[type=text]{
+    background-color: rgba(255, 255, 255, 0.250);
+    color: #FFF;
+    font-size: 14px;
+    width: 85%;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+}
+input[type=submit]{
+    background-color: rgba(255, 255, 255);
+    color: #000;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 20px;
+    width: 25%;
+    height: 35px;
+    border: 0;
+    border-radius: 5px;
+}
+#Resultados{
+    margin-top: 125px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+#Resultados img{
+    width: 35%;
+}
+/*FIN DE LA SECCION BUSCAR*/
+
+/*PERFIL*/
+#Foto-Nombre{
+    margin-top: 5%;
+    text-align: center;
+}
+.perfil{
+    width: 250px;
+    border-radius: 50%;
+}
+#Info-Perfil{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#Info-Perfil h1{
+    font-size: 25px;
+    margin-bottom: -10px;
+}
+#Info-Perfil p{
+    margin: 10px 10px 5% 10px;
+}
+#Seccion-Artistas{
+    margin: 20px 20px 0 20px;
+}
+#Seccion-Artistas h1{
+    text-align: center;
+    margin-top: 20px;
+}
+.artistas{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.artistas h2{
+    margin-right: 20px;
+}
+.ultimo{
+    margin-bottom: 22%;
+}
+.artistas img{
+    width: 80px;
+    margin: 0 12px 0 0;
+    border-radius: 20%;
+}
+/*FIN PERFIL*/
+/*RANDOM*/
+#Img-random{
+    margin:50px 100px;
+    width: 250px;
+    height: 250px;
+}
+#Img-random img{
+    width: 100px;
+    margin:0;
+    padding:0;
+}
+#random{
+    margin: 00px 50px;
+    text-align: center;
+}
+button{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #000;
+    border:0;
+    border-radius: 10px;
+    background-color: #FFF;
+    font-weight: bold;
+    width: 125px;
+    height: 50px;
+}
+.Destacados-random{
+    opacity: 0.6;
+}
+#random ul{
+    padding: 0;
+}
+#random ul li{
+    list-style: none;
+}
+.Destacados-random p{
+    margin-bottom: 0;
+}
+/*FIN RANDOM*/
+/*CONFIGURACIONES*/
+#title-config{
+    text-align: center;
+}
+#config-general{
+    margin: 10px 50px;
+}
+.contenedor-configuracion{
+    margin: 10% 0;
+}
+.contenedor-configuracion h4{
+    margin-bottom: 0;
+}
+/*FIN CONFIGURACIONES*/
+
+/*Descubrimiento*/
+#descubrimiento{
+    text-align: center;
+}
+#descubrimiento img{
+    width: 50vh;
+    height: 350px;
+    object-fit: cover;
+}
+.info-descubrimiento{
+    text-align: center;
+    margin: 0 25px;
+}
+.info-descubrimiento p{
+    margin: 5px 0 0 0;
+}
+.info-descubrimiento a{
+    color: #000;
+    text-decoration: none;
+}
+/*fin descubrimiento*/
+/*Carrousel (en construccion)*/
+#Carrousel{
+    text-align: center;
+}
+#Carrousel img{
+    width: 100px;
+    margin: 5px;
+    border-radius: 10px;
+    filter: hue-rotate(25deg);
+}
+/*fin carrousel*/
+
+/*MEDIAS QUERIES*/
+@media only screen and (max-width: 374px) {
+
+    .titulo {
+        margin-left: 40px;
+    }
+    .caratula {
+        width: 350px;
+        height: 120px;
+    }
+    #Carrousel img{
+        width: 100px;
+    }
+    #descubrimiento img{
+        width: 45vh;
+        height: 175px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .info-descubrimiento p{
+        margin: 5px 0 10px 0;
+    }
+    #Img-random{
+        margin:50px 110px;
+        width: 200px;
+        height: 200px;
+    }
+    #Img-random img{
+        width: 80px;
+    }
+    #random h1{
+        margin-bottom: 0;
+    }
+    .contenedor-configuracion h4{
+        font-size: 15px;
+    }
+
+}
+
+
+@media only screen and (min-width: 512px) {
+
+    .titulo {
+        margin-left: 100px;
+    }
+    .caratula {
+        width: 450px;
+        height: 170px;
+    }
+    #Carrousel img{
+        width: 130px;
+    }
+    #descubrimiento img{
+        width: 59vh;
+        height: 350px;
+        object-fit: cover;
+    }
+    .info-descubrimiento p{
+        margin: 5px 0 10px 0;
+    }
+    #Img-random{
+        margin:50px 140px;
+        width: 270px;
+        height: 270px;
+    }
+    #Img-random img{
+        width: 120px;
+    }
+    #random h1{
+        margin-bottom: 0;
+    }
+    .contenedor-configuracion h4{
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 645px) {
+
+    .titulo {
+        margin-left: 140px;
+        font-size: 25px;
+    }
+    .caratula {
+        width: 550px;
+        height: 160px;
+    }
+    #Carrousel img{
+        width: 140px;
+        margin: 0px 15px;
+    }
+    #descubrimiento img{
+        width: 75vh;
+        height: 350px;
+        object-fit: cover;
+    }
+    .info-descubrimiento p{
+        margin: 5px 0 10px 0;
+    }
+    #Img-random{
+        margin:50px 200px;
+        width: 300px;
+        height: 300px;
+    }
+    #Img-random img{
+        width: 125px;
+    }
+    #random h1{
+        margin-bottom: 0;
+    }
+    .contenedor-configuracion h4{
+        font-size: 22px;
+    }
+    .config-final{
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 765px) {
+
+    .encabezado p{
+        text-align: center;
+    }
+    .titulo {
+        margin-left: 180px;
+        font-size: 25px;
+    }
+    #Carrousel img{
+        width: 145px;
+        margin: 0px 25px;
+    }
+    #Img-random{
+        margin:50px 250px;
+        width: 350px;
+        height: 350px;
+    }
+    #Img-random img{
+        width: 150px;
+    }
+    .contenedor-configuracion h4{
+        font-size: 22px;
+    }
+    .config-final{
+        margin-bottom: -20px;
+    }
+}
